@@ -4,9 +4,11 @@ import datetime
 import pandas as pd
 import vectorbt as vbt
 
-sp500 = pd.read_csv("../data/sp500_return.csv", parse_dates=["date"], index_col=0)
-sp500_list = pd.read_csv("../data/sp500_list.csv", index_col=0, parse_dates=["start", "ending"])
-stock_id = pd.read_csv("../data/stock_id.csv", index_col=0, parse_dates=["namedt", "nameendt"])
+DATA_DIR = "src/stat-arb-codes-1/data"
+
+sp500 = pd.read_csv(f"{DATA_DIR}/sp500_return.csv", parse_dates=["date"], index_col=0)
+sp500_list = pd.read_csv(f"{DATA_DIR}/sp500_list.csv", index_col=0, parse_dates=["start", "ending"])
+stock_id = pd.read_csv(f"{DATA_DIR}/stock_id.csv", index_col=0, parse_dates=["namedt", "nameendt"])
 
 sp500.columns = sp500.columns.astype(int)
 sp500 = sp500.loc["2015":]
