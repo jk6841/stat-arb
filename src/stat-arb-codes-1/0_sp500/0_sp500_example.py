@@ -91,6 +91,7 @@ fig, ax = plt.subplots(1, 1, figsize=(12, 8))
 values = pd.concat([pf0.value(), pf1.value()], axis=1)
 values.columns = ["Portfolio 0", "Portfolio 1"]
 values.plot(ax=ax)
+plt.show()
 
 
 # %%
